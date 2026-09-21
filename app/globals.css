@@ -1,26 +1,166 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme inline {
+  --font-sans: var(--font-montserrat);
+  --font-mono: var(--font-roboto-mono);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-border: var(--border);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-success: var(--success);
+  --color-error: var(--error);
+
+  --color-typing-current: var(--typing-current);
+  --color-typing-correct: var(--typing-correct);
+  --color-typing-incorrect: var(--typing-incorrect);
+
+  --color-keyboard: var(--keyboard);
+  --color-keyboard-foreground: var(--keyboard-foreground);
+  --color-keyboard-active: var(--keyboard-active);
+
+  --radius-keyflow: var(--radius);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --background: #f7f7f5;
+  --foreground: #242424;
+
+  --muted: #ededeb;
+  --muted-foreground: #737373;
+
+  --card: #ffffff;
+  --card-foreground: #242424;
+
+  --border: #dededb;
+
+  --accent: #d9c7a3;
+  --accent-foreground: #2d281f;
+
+  --success: #7c9a82;
+  --error: #c97878;
+
+  --typing-current: #242424;
+  --typing-correct: #242424;
+  --typing-incorrect: #c97878;
+
+  --keyboard: #e8e8e5;
+  --keyboard-foreground: #3a3a38;
+  --keyboard-active: #d9c7a3;
+
+  --radius: 0.75rem;
+}
+
+/* --------------------------------------------------
+   Dark theme
+-------------------------------------------------- */
+
+.dark {
+  --background: #171716;
+  --foreground: #e8e7e3;
+
+  --muted: #242422;
+  --muted-foreground: #92928d;
+
+  --card: #1d1d1b;
+  --card-foreground: #e8e7e3;
+
+  --border: #30302d;
+
+  --accent: #c9b78f;
+  --accent-foreground: #211e18;
+
+  --success: #8ba991;
+  --error: #d48181;
+
+  --typing-current: #e8e7e3;
+  --typing-correct: #e8e7e3;
+  --typing-incorrect: #d48181;
+
+  --keyboard: #252523;
+  --keyboard-foreground: #d1d0cb;
+  --keyboard-active: #c9b78f;
+}
+
+
+@layer base {
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply min-h-screen bg-background font-sans text-foreground antialiased;
+
+    margin: 0;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    @apply font-sans;
+  }
+
+  button {
+    @apply cursor-pointer;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: var(--accent-foreground);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 999px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-foreground);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
