@@ -1,0 +1,7 @@
+export const KEYBOARD_ROWS = [
+  ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p"],
+  ["a", "s", "d", "f", "g", "h", "j", "k", "l"],
+  ["z", "x", "c", "v", "b", "n", "m"],
+] as const;
+
+export const SPECIAL_KEYS = ["backspace", "space"] as const;
