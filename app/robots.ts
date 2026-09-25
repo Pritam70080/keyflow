@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://keyflow.local/sitemap.xml",
+    sitemap: "https://keyflow-brown.vercel.app/sitemap.xml",
   };
 }

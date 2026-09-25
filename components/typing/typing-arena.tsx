@@ -190,12 +190,12 @@ export function TypingArena() {
   };
 
   return (
-    <main className="h-[100svh] overflow-hidden">
-      <div className="mx-auto flex h-full min-h-0 max-w-5xl flex-col px-5 py-4 md:px-8">
+    <main className="min-h-screen overflow-x-hidden">
+      <div className="mx-auto flex min-h-screen max-w-5xl flex-col px-4 pt-4 sm:px-5 md:px-8">
         <AppHeader />
 
-        <section className="flex min-h-0 flex-1 flex-col justify-start gap-8 overflow-y-auto py-5 md:justify-between md:gap-7 md:overflow-visible md:py-5">
-          <div className="flex flex-wrap items-center justify-between gap-3">
+        <section className="flex min-h-0 flex-1 flex-col justify-start gap-6 overflow-x-hidden py-4 sm:gap-8 md:justify-between md:gap-7 md:py-4">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex flex-wrap items-center gap-2">
               <OptionPills
                 ariaLabel="Difficulty"
@@ -219,7 +219,7 @@ export function TypingArena() {
               />
             </div>
 
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap items-center gap-2">
               <Button
                 variant="ghost"
                 size="sm"
@@ -250,7 +250,7 @@ export function TypingArena() {
           </div>
 
           <div
-            className="grid max-w-md grid-cols-3 gap-6 font-mono text-sm text-muted-foreground"
+            className="grid max-w-md grid-cols-3 gap-3 font-mono text-xs text-muted-foreground sm:gap-6 sm:text-sm"
             aria-live="polite"
           >
             <div>
@@ -299,7 +299,7 @@ export function TypingArena() {
                   Preparing a passage…
                 </p>
               )}
-              <p className="mt-6 text-sm text-muted-foreground">
+              <p className="mt-5 text-sm text-muted-foreground">
                 {status === "idle"
                   ? "Start typing whenever you are ready. Esc restarts."
                   : "Keep going. Backspace fixes mistakes."}

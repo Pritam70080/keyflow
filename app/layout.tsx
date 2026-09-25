@@ -19,6 +19,7 @@ const robotoMono = Roboto_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://keyflow-brown.vercel.app"),
   title: {
     default: "Keyflow | Focused typing practice",
     template: "%s | Keyflow",

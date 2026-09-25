@@ -53,10 +53,10 @@ function KeyCap({
           : { type: "spring", stiffness: 620, damping: 32, mass: 0.3 }
       }
       className={cn(
-        "flex h-11 items-center justify-center rounded-xl border border-border/80 bg-keyboard text-sm font-medium text-keyboard-foreground shadow-[0_2px_0_var(--border)] select-none",
-        wide && "min-w-[4.5rem] px-3",
-        extraWide && "w-[9rem] md:w-[14rem]",
-        !wide && !extraWide && "w-9 sm:w-11",
+        "flex h-9 min-w-0 items-center justify-center rounded-xl border border-border/80 bg-keyboard text-[0.65rem] font-medium text-keyboard-foreground shadow-[0_2px_0_var(--border)] select-none sm:h-11 sm:text-sm",
+        wide && "flex-[1.4] px-2 sm:px-3",
+        extraWide && "w-[16rem] md:w-[26rem]",
+        !wide && !extraWide && "flex-1",
         expected && "border-accent bg-accent/25 text-foreground",
         active && "border-accent bg-keyboard-active text-accent-foreground",
       )}
@@ -75,7 +75,7 @@ export function VirtualKeyboard({
   const expected = expectedKey === " " ? "space" : expectedKey?.toLowerCase();
 
   return (
-    <div className="mx-auto hidden w-full max-w-3xl flex-col gap-1.5 sm:flex sm:gap-2">
+    <div className="mx-auto flex w-full max-w-3xl flex-col gap-1.5 overflow-x-hidden sm:gap-2">
       {KEYBOARD_ROWS.map((row, rowIndex) => (
         <div key={row.join("")} className="flex justify-center gap-1.5 sm:gap-2">
           {rowIndex === 2 ? (

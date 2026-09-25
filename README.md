@@ -1,36 +1,105 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Keyflow
 
-## Getting Started
+Keyflow is a focused typing trainer built with Next.js. It helps users practice speed and accuracy with a clean interface, live WPM and accuracy stats, a visual keyboard, and local progress tracking.
 
-First, run the development server:
+## Live demo
+
+- Deployed app: https://keyflow-brown.vercel.app/
+- GitHub repository: https://github.com/Pritam70080/keyflow
+
+## What I used to build the app
+
+This project is built with:
+
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS
+- App Router
+- Zustand for local state and preferences
+- Recharts for progress visualization
+- Lucide React for icons
+- Motion for small UI animations
+- Base UI for button primitives
+
+## Fonts used
+
+The app uses Google fonts through Next.js font optimization:
+
+- Montserrat for general interface text
+- Roboto Mono for metrics, numbers, and typing details
+
+These are configured in [app/layout.tsx](app/layout.tsx).
+
+## Project overview
+
+Keyflow is designed to feel calm and minimal while still providing useful feedback during typing sessions. Users can:
+
+- start a typing session instantly
+- switch difficulty and duration
+- see live WPM, accuracy, and raw speed
+- use a visual keyboard and keyboard input tracking
+- keep history locally in the browser
+- review learning progress over time
+
+## Routes
+
+- `/` — main typing practice screen with live testing experience
+- `/about` — product overview and app explanation
+- `/progress` — saved session history and performance averages
+
+## How to clone the project
+
+```bash
+git clone https://github.com/Pritam70080/keyflow.git
+cd keyflow
+```
+
+## How to run the app locally
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open the app in your browser at:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+For a production build:
 
-## Learn More
+```bash
+npm run build
+npm run start
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Scripts
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run dev    # run the app in development mode
+npm run build  # create a production build
+npm run start  # serve the production build
+npm run lint   # run ESLint checks
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Notes
 
-## Deploy on Vercel
+- Progress and preferences are stored locally in the browser.
+- The app does not require an account to start typing.
+- The design is intentionally minimal and mobile-friendly.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Recommended next ideas
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- add downloadable stats/history export
+- add daily streak tracking
+- add custom practice passages
+- add sound themes and stronger personalization options
